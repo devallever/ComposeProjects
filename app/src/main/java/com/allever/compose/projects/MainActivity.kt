@@ -1,5 +1,6 @@
 package com.allever.compose.projects
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -10,6 +11,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.allever.compose.project.watch.WatchMainActivity
 import com.allever.compose.projects.ui.theme.ComposeProjectsTheme
 
 class MainActivity : ComponentActivity() {
@@ -26,6 +28,10 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
+
+        val intent = Intent(this, WatchMainActivity::class.java)
+        startActivity(intent)
+        finish()
     }
 }
 
