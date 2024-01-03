@@ -30,3 +30,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "ComposeProjects"
 include ':app'
+include ':watch'
