@@ -29,7 +29,7 @@ class MainActivity : ComponentActivity() {
             }
         }
 
-        val intent = Intent(this, WatchMainActivity::class.java)
+        val intent = Intent(this, app.allever.android.learning.project.compose.MainActivity::class.java)
         startActivity(intent)
         finish()
     }
