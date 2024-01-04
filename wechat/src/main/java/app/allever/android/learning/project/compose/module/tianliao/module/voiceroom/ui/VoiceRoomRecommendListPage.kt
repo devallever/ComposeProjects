@@ -29,9 +29,9 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import app.allever.android.learning.project.compose.module.tianliao.module.common.ui.ViewPager
 import app.allever.android.learning.project.compose.module.tianliao.module.voiceroom.viewmodel.HomeVoiceRoomViewModel
 import app.allever.android.learning.project.compose.module.tianliao.module.voiceroom.viewmodel.VoiceRoomListViewModel
-import app.allever.android.lib.core.ext.toast
 import coil.compose.AsyncImage
 import coil.compose.rememberImagePainter
+import com.allever.compose.core.toast
 import com.allever.compose.project.wechat.R
 import com.google.accompanist.pager.ExperimentalPagerApi
 import com.google.accompanist.pager.rememberPagerState

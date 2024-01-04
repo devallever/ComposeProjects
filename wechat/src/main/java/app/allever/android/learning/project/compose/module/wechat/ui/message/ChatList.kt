@@ -19,7 +19,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import app.allever.android.learning.project.compose.module.wechat.data.Chat
-import app.allever.android.lib.core.ext.toast
+import com.allever.compose.core.toast
 
 @Composable
 fun ChatList(chats: List<Chat>) {

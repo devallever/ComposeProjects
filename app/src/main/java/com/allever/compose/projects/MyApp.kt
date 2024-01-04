@@ -1,6 +1,7 @@
 package com.allever.compose.projects
 
-import app.allever.android.lib.core.app.App
+import com.allever.compose.core.App
+
 
 /**
  *@Description
