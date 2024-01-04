@@ -31,3 +31,5 @@ dependencyResolutionManagement {
 rootProject.name = "ComposeProjects"
 include ':app'
 include ':watch'
+include ':wechat'
+include ':core-compose'

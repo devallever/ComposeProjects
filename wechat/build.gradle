@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace 'com.allever.compose.project.watch'
+    namespace 'com.allever.compose.project.wechat'
     compileSdk 34
 
     defaultConfig {
