@@ -50,4 +50,5 @@ dependencies {
     implementation project(path: ':watch')
     implementation project(path: ':wechat')
     implementation project(path: ':core-compose')
+    implementation project(path: ':google-compose')
 }

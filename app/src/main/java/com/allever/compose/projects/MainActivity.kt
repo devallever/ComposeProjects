@@ -25,6 +25,7 @@ import app.allever.android.learning.project.compose.module.tianliao.module.main.
 import app.allever.android.learning.project.compose.module.wechat.ui.WechatComposeActivity
 import app.allever.android.learning.project.compose.ui.theme.ComposeProjectTheme
 import com.allever.compose.core.ActivityHelper
+import com.allever.compose.project.google.GoogleComposeMainActivity
 import com.allever.compose.project.watch.WatchMainActivity
 import com.allever.compose.project.wechat.R
 
@@ -45,6 +46,9 @@ class MainActivity : ComponentActivity() {
                         }
                         2 -> {
                             ActivityHelper.startActivity<WatchMainActivity>(this) {  }
+                        }
+                        3 -> {
+                            ActivityHelper.startActivity<GoogleComposeMainActivity>(this) {  }
                         }
                     }
 
