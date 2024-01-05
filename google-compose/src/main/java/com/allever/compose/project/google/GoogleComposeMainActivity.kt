@@ -3,17 +3,12 @@ package com.allever.compose.project.google
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.ElevatedButton
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
+import androidx.compose.foundation.layout.*
+import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.allever.compose.project.google.ui.theme.GoogleComposeProjectsTheme
@@ -53,7 +48,8 @@ fun Greeting(name: String) {
             Column(
                 Modifier
                     .weight(1f)
-                    .padding(bottom = expendedPadding)) {
+                    .padding(bottom = expendedPadding)
+            ) {
                 Text(text = "Hello,")
                 Text(text = name)
             }
@@ -68,14 +64,38 @@ fun Greeting(name: String) {
 }
 
 @Composable
+fun OnBoardingScreen(callback: () -> Unit) {
+    Column(
+        Modifier.fillMaxSize(),
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Text(text = "Welcome to the Basics Codelab!")
+        Button(onClick = { callback.invoke() }, modifier = Modifier.padding(24.dp)) {
+            Text(text = "Continue")
+        }
+    }
+}
+
+@Composable
 fun MyApp(
     modifier: Modifier = Modifier,
     nameList: List<String> = listOf("Compose Project", "Android")
 ) {
-    //可以用 Surface 包围 可组合项, 设置背景颜色
-    Column {
-        for (name in nameList) {
-            Greeting(name)
+
+    val shouldShowOnBoarding = remember { mutableStateOf(true) }
+
+    if (shouldShowOnBoarding.value) {
+        OnBoardingScreen {
+            shouldShowOnBoarding.value = false
+        }
+    } else {
+        //可以用 Surface 包围 可组合项, 设置背景颜色
+        Column {
+            for (name in nameList) {
+                Greeting(name)
+            }
         }
     }
+
 }
