@@ -4,10 +4,13 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
@@ -33,7 +36,7 @@ class GoogleComposeMainActivity : ComponentActivity() {
 
 @Composable()
 fun Greeting(name: String) {
-    val expended = remember {
+    val expended = rememberSaveable {
         mutableStateOf(false)
     }
     val expendedPadding = if (expended.value) 48.dp else 0.dp
@@ -83,7 +86,7 @@ fun MyApp(
     nameList: List<String> = listOf("Compose Project", "Android")
 ) {
 
-    val shouldShowOnBoarding = remember { mutableStateOf(true) }
+    val shouldShowOnBoarding = rememberSaveable { mutableStateOf(true) }
 
     if (shouldShowOnBoarding.value) {
         OnBoardingScreen {
@@ -91,9 +94,10 @@ fun MyApp(
         }
     } else {
         //可以用 Surface 包围 可组合项, 设置背景颜色
-        Column {
-            for (name in nameList) {
-                Greeting(name)
+        val names = List(30) { "${it+1}" }
+        LazyColumn(modifier = modifier.padding(vertical = 4.dp)) {
+            items(names) {
+                Greeting(name = it)
             }
         }
     }
