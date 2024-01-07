@@ -15,5 +15,6 @@ class MainViewModel : ViewModel() {
         functionItemList.add(FunctionItem("微信", "微信主界面"))
         functionItemList.add(FunctionItem("天聊", "天聊Compose"))
         functionItemList.add(FunctionItem("虚构", "扔物线compose教程，虚构app"))
+        functionItemList.add(FunctionItem("GoogleCompose", "Google Compose 教程"))
     }
 }
