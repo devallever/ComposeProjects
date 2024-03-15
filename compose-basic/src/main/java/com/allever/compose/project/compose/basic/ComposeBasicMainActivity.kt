@@ -1,5 +1,6 @@
 package com.allever.compose.project.compose.basic
 
+import android.graphics.pdf.PdfDocument.Page
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -27,6 +28,9 @@ class ComposeBasicMainActivity : ComponentActivity() {
                     })
                     add(TextClickItem("高级控件-网格", "高级控件基本用法，网格") {
                         ActivityHelper.startActivity<GridWidgetActivity>(this@ComposeBasicMainActivity) { }
+                    })
+                    add(TextClickItem("高级控件-ViewPager", "高级控件基本用法，分页") {
+                        ActivityHelper.startActivity<PagerWidgetActivity>(this@ComposeBasicMainActivity) { }
                     })
                 })
             }
