@@ -25,6 +25,8 @@ import app.allever.android.learning.project.compose.module.tianliao.module.main.
 import app.allever.android.learning.project.compose.module.wechat.ui.WechatComposeActivity
 import app.allever.android.learning.project.compose.ui.theme.ComposeProjectTheme
 import com.allever.compose.core.ActivityHelper
+import com.allever.compose.core.TextClickItem
+import com.allever.compose.core.ui.FunctionList
 import com.allever.compose.project.google.GoogleComposeMainActivity
 import com.allever.compose.project.watch.WatchMainActivity
 import com.allever.compose.project.wechat.R
@@ -36,45 +38,21 @@ class MainActivity : ComponentActivity() {
         setContent {
             ComposeProjectTheme {
                 //功能列表
-                FunctionList(viewMode.functionItemList) {
-                    when (it) {
-                        0 -> {
-                            WechatComposeActivity.start(this)
-                        }
-                        1 -> {
-                            ActivityHelper.startActivity(TLMainActivity::class.java, this)
-                        }
-                        2 -> {
-                            ActivityHelper.startActivity<WatchMainActivity>(this) {  }
-                        }
-                        3 -> {
-                            ActivityHelper.startActivity<GoogleComposeMainActivity>(this) {  }
-                        }
-                    }
-
-                }
+                FunctionList(list = mutableListOf<TextClickItem>().apply {
+                    add(TextClickItem("微信", "微信主界面") {
+                        WechatComposeActivity.start(this@MainActivity)
+                    })
+                    add(TextClickItem("天聊", "天聊Compose") {
+                        ActivityHelper.startActivity(TLMainActivity::class.java, this@MainActivity)
+                    })
+                    add(TextClickItem("虚构", "扔物线compose教程，虚构app") {
+                        ActivityHelper.startActivity<WatchMainActivity>(this@MainActivity) {  }
+                    })
+                    add(TextClickItem("GoogleCompose", "Google Compose 教程") {
+                        ActivityHelper.startActivity<GoogleComposeMainActivity>(this@MainActivity) {  }
+                    })
+                })
             }
-        }
-    }
-}
-
-@Composable
-fun FunctionList(list: List<FunctionItem>, callback: (position: Int) -> Unit) {
-    LazyColumn() {
-        itemsIndexed(list) { index, item ->
-            Column(
-                Modifier
-                    .fillMaxSize()
-                    .clickable {
-                        callback(index)
-                        Log.d("", "FunctionList: ${item.title}")
-                    }
-                    .padding(vertical = 10.dp, horizontal = 10.dp)
-            ) {
-                Text(item.title, fontSize = 17.sp)
-                Text(item.desc, fontSize = 14.sp, color = Color.Gray)
-            }
-
         }
     }
 }
@@ -98,3 +76,4 @@ fun PreviewFunctionList() {
         }
     }
 }
+
