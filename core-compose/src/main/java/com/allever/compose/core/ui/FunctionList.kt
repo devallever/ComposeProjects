@@ -22,7 +22,9 @@ import com.allever.compose.core.TextClickItem
  */
 
 
-
+/**
+ * 列表
+ */
 @Composable
 fun FunctionList(list: List<TextClickItem>) {
     LazyColumn() {

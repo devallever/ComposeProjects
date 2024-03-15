@@ -1,23 +1,18 @@
 plugins {
-    id 'com.android.application'
+    id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
 }
 
 android {
-    namespace 'com.allever.compose.projects'
-    compileSdk 34
+    namespace 'com.allever.compose.project.compose.basic'
+    compileSdk 33
 
     defaultConfig {
-        applicationId "com.allever.compose.projects"
         minSdk 24
-        targetSdk 34
-        versionCode 1
-        versionName "1.0"
+        targetSdk 33
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        vectorDrawables {
-            useSupportLibrary true
-        }
+        consumerProguardFiles "consumer-rules.pro"
     }
 
     buildTypes {
@@ -33,23 +28,15 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
     buildFeatures {
         compose true
     }
     composeOptions {
         kotlinCompilerExtensionVersion '1.4.0'
     }
-    packagingOptions {
-        resources {
-            excludes += '/META-INF/{AL2.0,LGPL2.1}'
-        }
-    }
 }
 
 dependencies {
-    implementation project(path: ':watch')
-    implementation project(path: ':wechat')
     implementation project(path: ':core-compose')
-    implementation project(path: ':google-compose')
-    implementation project(path: ':compose-basic')
 }

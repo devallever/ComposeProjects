@@ -27,6 +27,7 @@ import app.allever.android.learning.project.compose.ui.theme.ComposeProjectTheme
 import com.allever.compose.core.ActivityHelper
 import com.allever.compose.core.TextClickItem
 import com.allever.compose.core.ui.FunctionList
+import com.allever.compose.project.compose.basic.ComposeBasicMainActivity
 import com.allever.compose.project.google.GoogleComposeMainActivity
 import com.allever.compose.project.watch.WatchMainActivity
 import com.allever.compose.project.wechat.R
@@ -50,6 +51,9 @@ class MainActivity : ComponentActivity() {
                     })
                     add(TextClickItem("GoogleCompose", "Google Compose 教程") {
                         ActivityHelper.startActivity<GoogleComposeMainActivity>(this@MainActivity) {  }
+                    })
+                    add(TextClickItem("Compose Basic", "Compose 基础") {
+                        ActivityHelper.startActivity<ComposeBasicMainActivity> (this@MainActivity){  }
                     })
                 })
             }
