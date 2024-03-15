@@ -7,7 +7,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.lifecycle.viewmodel.compose.viewModel
 import app.allever.android.learning.project.compose.module.wechat.ui.main.HomePage
-import app.allever.android.learning.project.compose.ui.theme.ComposeProjectTheme
+import com.allever.compose.core.ui.ComposeProjectTheme
 
 
 class WechatComposeActivity : ComponentActivity() {

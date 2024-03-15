@@ -23,9 +23,9 @@ import androidx.compose.ui.unit.sp
 import app.allever.android.learning.project.compose.data.FunctionItem
 import app.allever.android.learning.project.compose.module.tianliao.module.main.TLMainActivity
 import app.allever.android.learning.project.compose.module.wechat.ui.WechatComposeActivity
-import app.allever.android.learning.project.compose.ui.theme.ComposeProjectTheme
 import com.allever.compose.core.ActivityHelper
 import com.allever.compose.core.TextClickItem
+import com.allever.compose.core.ui.ComposeProjectTheme
 import com.allever.compose.core.ui.FunctionList
 import com.allever.compose.project.compose.basic.ComposeBasicMainActivity
 import com.allever.compose.project.google.GoogleComposeMainActivity
@@ -37,7 +37,7 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            ComposeProjectTheme {
+            ComposeProjectTheme() {
                 //功能列表
                 FunctionList(list = mutableListOf<TextClickItem>().apply {
                     add(TextClickItem("微信", "微信主界面") {
