@@ -6,6 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.itemsIndexed
@@ -201,7 +202,10 @@ class WatchMainActivity : ComponentActivity() {
                     Text(
                         fontWeight = if (index == selected) FontWeight.Bold else FontWeight.Normal,
                         text = item,
-                        color = if (index == selected) Color(0xfffa9e51) else Color(0xffb4b4b4)
+                        color = if (index == selected) Color(0xfffa9e51) else Color(0xffb4b4b4),
+                        modifier = Modifier.clickable {
+                            selected = index
+                        }
                     )
 
                     if (index == selected) {
