@@ -5,6 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
@@ -117,7 +118,7 @@ class BasicWidgetActivity : ComponentActivity() {
                         color = Color.Gray
                     )
 
-                    Row() {
+                    Row {
                         TextButton(onClick = {
                             onConfirmation.invoke()
                         }) {
@@ -215,7 +216,10 @@ class BasicWidgetActivity : ComponentActivity() {
                     contentDescription = ""
                 )
 
-                Text(text = "本地图片(圆角), clip(RoundedCornerShape(10.dp))", Modifier.padding(10.dp))
+                Text(
+                    text = "本地图片(圆角), clip(RoundedCornerShape(10.dp))",
+                    Modifier.padding(10.dp)
+                )
 
                 Image(
                     painter = painterResource(id = R.drawable.default_image),
@@ -561,7 +565,89 @@ class BasicWidgetActivity : ComponentActivity() {
                     Text(text = "启动进度")
                 }
 
+                Text(text = "TabLayout TabRow", Modifier.padding(10.dp))
+                val tabTitles = listOf("Tab1", "Tab2", "Tab3")
+                var tabIndex by remember {
+                    mutableStateOf(0)
+                }
+                TabRow(selectedTabIndex = tabIndex) {
+                    tabTitles.forEachIndexed { index, s ->
+                        Tab(
+                            selected = tabIndex == index,
+                            onClick = {
+                                tabIndex = index
+                            },
+                            text = {
+                                Text(text = s)
+                            },
+                            icon = {
+                                Icon(
+                                    painter = painterResource(id = R.drawable.ic_menu),
+                                    contentDescription = "",
+                                    modifier = Modifier
+                                        .size(32.dp)
+                                        .padding(8.dp)
+                                )
+                            })
+                    }
+                }
 
+                Text(text = "TabLayout TabRow 自定义Tab", Modifier.padding(10.dp))
+                var customTabIndex by remember {
+                    mutableStateOf(0)
+                }
+                TabRow(indicator = {}, divider = {}, selectedTabIndex = customTabIndex) {
+                    tabTitles.forEachIndexed { index, s ->
+                        Tab(
+                            selectedContentColor = Color.Black,
+                            unselectedContentColor = Color.Gray,
+                            selected = customTabIndex == index,
+                            onClick = { customTabIndex = index }) {
+                            Column(
+                                horizontalAlignment = Alignment.CenterHorizontally,
+                                modifier = Modifier
+                            ) {
+                                Icon(
+                                    painter = painterResource(id = R.drawable.ic_menu),
+                                    contentDescription = "",
+                                    modifier = Modifier
+                                        .size(32.dp)
+                                        .padding(6.dp)
+                                )
+                                Text(
+                                    text = s,
+                                    modifier = Modifier.padding(2.dp),
+                                    fontWeight = if (customTabIndex == index) FontWeight.Bold else FontWeight.Light
+                                )
+                            }
+                        }
+                    }
+                }
+
+                Text(text = "滚动的Tab ScrollableTabRow", Modifier.padding(10.dp))
+                val scrollTabTitles = mutableListOf<String>()
+                for (i in 1..10) {
+                    scrollTabTitles.add("Tab${i}")
+                }
+                var scrollTabIndex by remember {
+                    mutableStateOf(0)
+                }
+                ScrollableTabRow(
+                    selectedTabIndex = scrollTabIndex,
+                    edgePadding = 0.dp,
+                    divider = {}) {
+                    scrollTabTitles.forEachIndexed { index, s ->
+                        Tab(
+                            selected = scrollTabIndex == index,
+                            onClick = {
+                                scrollTabIndex = index
+                            },
+                            text = {
+                                Text(text = s)
+                            })
+                    }
+
+                }
 
                 Box(
                     modifier = Modifier
