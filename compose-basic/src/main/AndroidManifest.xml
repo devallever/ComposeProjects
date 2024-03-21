@@ -7,5 +7,6 @@
         <activity android:name="com.allever.compose.project.compose.basic.ListWidgetActivity" />
         <activity android:name="com.allever.compose.project.compose.basic.GridWidgetActivity" />
         <activity android:name="com.allever.compose.project.compose.basic.PagerWidgetActivity" />
+        <activity android:name="com.allever.compose.project.compose.basic.AppFrameBottomNaviActivity" />
     </application>
 </manifest>

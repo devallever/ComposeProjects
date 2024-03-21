@@ -32,6 +32,10 @@ class ComposeBasicMainActivity : ComponentActivity() {
                     add(TextClickItem("高级控件-ViewPager", "高级控件基本用法，分页") {
                         ActivityHelper.startActivity<PagerWidgetActivity>(this@ComposeBasicMainActivity) { }
                     })
+
+                    add(TextClickItem("App-页面架构-底部导航+ViewPager", "App页面架构") {
+                        ActivityHelper.startActivity<AppFrameBottomNaviActivity>(this@ComposeBasicMainActivity) { }
+                    })
                 })
             }
 
