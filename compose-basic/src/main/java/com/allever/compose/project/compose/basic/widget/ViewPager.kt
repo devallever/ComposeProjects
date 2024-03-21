@@ -1,4 +1,4 @@
-package app.allever.android.learning.project.compose.module.tianliao.module.common.ui
+package com.allever.compose.project.compose.basic.widget
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
