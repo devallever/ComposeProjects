@@ -27,6 +27,7 @@ import com.allever.compose.core.ActivityHelper
 import com.allever.compose.core.TextClickItem
 import com.allever.compose.core.ui.ComposeProjectTheme
 import com.allever.compose.core.ui.FunctionList
+import com.allever.compose.project.compose.ad.ComposeAdMainActivity
 import com.allever.compose.project.compose.basic.ComposeBasicMainActivity
 import com.allever.compose.project.google.GoogleComposeMainActivity
 import com.allever.compose.project.watch.WatchMainActivity
@@ -54,6 +55,9 @@ class MainActivity : ComponentActivity() {
                     })
                     add(TextClickItem("Compose Basic", "Compose 基础") {
                         ActivityHelper.startActivity<ComposeBasicMainActivity> (this@MainActivity){  }
+                    })
+                    add(TextClickItem("Compose Ad", "Compose 接入 AdMob") {
+                        ActivityHelper.startActivity<ComposeAdMainActivity> (this@MainActivity){  }
                     })
                 })
             }

@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace 'com.allever.compose.project.compose.basic'
+    namespace 'com.allever.compose.project.compose.ad'
     compileSdk 34
 
     defaultConfig {

@@ -52,4 +52,5 @@ dependencies {
     implementation project(path: ':core-compose')
     implementation project(path: ':google-compose')
     implementation project(path: ':compose-basic')
+    implementation project(path: ':compose-ad')
 }
