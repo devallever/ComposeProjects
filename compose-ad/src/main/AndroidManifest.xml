@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <uses-permission android:name="android.permission.INTERNET" />
     <application>
         <activity android:name="com.allever.compose.project.compose.ad.AdMobBasicActivity" />
         <activity android:name="com.allever.compose.project.compose.ad.ComposeAdMainActivity" />
         <activity android:name="com.allever.compose.project.compose.ad.AdMobNativeActivity" />
+
+        <!-- Sample AdMob app ID: ca-app-pub-3940256099942544~3347511713 -->
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-0000000000000000~0000000000" />
     </application>
 </manifest>

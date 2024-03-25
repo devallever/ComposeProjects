@@ -39,4 +39,5 @@ android {
 
 dependencies {
     implementation project(path: ':core-compose')
+    implementation 'com.google.android.gms:play-services-ads:22.0.0'
 }

@@ -1,6 +1,7 @@
 package com.allever.compose.projects
 
 import com.allever.compose.core.App
+import com.allever.compose.project.compose.ad.AdMobManager
 
 
 /**
@@ -10,6 +11,6 @@ import com.allever.compose.core.App
  */
 class MyApp: App() {
     override fun init() {
-
+        AdMobManager.init(this)
     }
 }
