@@ -1,4 +1,4 @@
-package com.allever.compose.project.compose.basic.widget
+package com.allever.compose.core.ui.widget
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding

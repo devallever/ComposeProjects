@@ -16,9 +16,9 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.lifecycleScope
 import com.allever.compose.core.ui.ComposeProjectTheme
-import com.allever.compose.project.compose.basic.widget.TabEntity
-import com.allever.compose.project.compose.basic.widget.BottomNavigationView
-import com.allever.compose.project.compose.basic.widget.ViewPager
+import com.allever.compose.core.ui.widget.BottomNavigationView
+import com.allever.compose.core.ui.widget.TabEntity
+import com.allever.compose.core.ui.widget.ViewPager
 import com.google.accompanist.pager.ExperimentalPagerApi
 import com.google.accompanist.pager.rememberPagerState
 import kotlinx.coroutines.launch
