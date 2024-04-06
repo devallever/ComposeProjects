@@ -528,7 +528,6 @@ class BasicWidgetActivity : ComponentActivity() {
 
 
                 Text(text = "圆形进度 CircularProgressIndicator", Modifier.padding(10.dp))
-                CircularProgressIndicator()
 
                 var circleProgressValue by remember {
                     mutableStateOf(0.3f)
@@ -547,7 +546,6 @@ class BasicWidgetActivity : ComponentActivity() {
                 }
 
                 Text(text = "水平进度 LinearProgressIndicator", Modifier.padding(10.dp))
-                LinearProgressIndicator()
 
                 var linearProgressValue by remember {
                     mutableStateOf(0.3f)
